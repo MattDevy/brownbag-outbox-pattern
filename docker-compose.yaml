@@ -1,0 +1,10 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: testpassword
+      POSTGRES_DB: brownbag
+    ports:
+      - 5432:5432

@@ -1,0 +1,5 @@
+development:
+  dialect: postgres
+  datasource: host=127.0.0.1 dbname=brownbag user=test password=testpassword sslmode=disable timezone=utc
+  dir: postgresql/migrations
+  table: migrations

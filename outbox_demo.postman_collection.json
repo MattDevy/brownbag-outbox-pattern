@@ -1,0 +1,449 @@
+{
+	"info": {
+		"_postman_id": "e9c9e27e-6388-42b1-adaf-0691d2de6a1b",
+		"name": "Outbox demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "after",
+			"item": [
+				{
+					"name": "after items pubsub fail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "pubsub-instructions",
+								"value": "fail",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test item after 1\",\n    \"count\": 1,\n    \"price\": 12.30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/after/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"after",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "after items x2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "pubsub-instructions",
+								"value": "succeed",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test item after 2\",\n    \"count\": 1,\n    \"price\": 12.30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/after/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"after",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "after items pubsub retry-5 success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "pubsub-instructions",
+								"value": "retry-5,succeed",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test item after 3\",\n    \"count\": 1,\n    \"price\": 12.30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/after/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"after",
+								"items"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "before",
+			"item": [
+				{
+					"name": "before items pubsub fail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "pubsub-instructions",
+								"value": "fail",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test item before 1\",\n    \"count\": 1,\n    \"price\": 12.30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/before/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"before",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "before items pubsub x2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "pubsub-instructions",
+								"value": "succeed",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test item before 2\",\n    \"count\": 1,\n    \"price\": 12.30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/before/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"before",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "before items pubsub retry-5 success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "pubsub-instructions",
+								"value": "retry-5,succeed",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test item before 3\",\n    \"count\": 1,\n    \"price\": 12.30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/before/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"before",
+								"items"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "transaction items pubsub fail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "pubsub-instructions",
+								"value": "fail",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test item tx 1\",\n    \"count\": 1,\n    \"price\": 12.30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/transaction/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transaction items pubsub x2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "pubsub-instructions",
+								"value": "succeed",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test item tx 2\",\n    \"count\": 1,\n    \"price\": 12.30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/transaction/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transaction items pubsub retry-5 success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "pubsub-instructions",
+								"value": "retry-5,succeed",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test item tx 3\",\n    \"count\": 1,\n    \"price\": 12.30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/transaction/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"items"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "outbox",
+			"item": [
+				{
+					"name": "transaction items pubsub fail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "pubsub-instructions",
+								"value": "fail",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test item outbox 1\",\n    \"count\": 1,\n    \"price\": 12.30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/outbox/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"outbox",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transaction items pubsub x2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "pubsub-instructions",
+								"value": "succeed",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test item outbox 2\",\n    \"count\": 1,\n    \"price\": 12.30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/outbox/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"outbox",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transaction items pubsub retry-5 success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "pubsub-instructions",
+								"value": "retry-5,succeed",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test item outbox 3\",\n    \"count\": 1,\n    \"price\": 12.30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/outbox/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"outbox",
+								"items"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
